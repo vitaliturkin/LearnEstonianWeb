@@ -1,5 +1,3 @@
-// result.js
-// Assuming 'score' is passed as a query parameter to this page
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const score = parseInt(urlParams.get('score'));

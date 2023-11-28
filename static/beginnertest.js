@@ -43,8 +43,7 @@ function checkAnswer() {
         } else {
             resultElement.textContent = "Congratulations! You have completed all the flashcards.";
         }
-    }, 1500); // Wait for 1.5 seconds before clearing the result message and moving to the next question
+    }, 1500); 
 }
 
-// Load the first question when the page loads
 window.onload = loadQuestion;

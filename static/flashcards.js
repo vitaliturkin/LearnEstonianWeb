@@ -19,13 +19,11 @@ flashcards.forEach((card, index) => {
     // Function to update the card status
     const updateCardStatus = () => {
         if (isKnown) {
-            card.classList.remove('not-known'); // Remove the not-known class
-            card.classList.add('known'); // Add a class to indicate the card is known
-            // You can update backend/database here to store user's choice for this card
+            card.classList.remove('not-known'); 
+            card.classList.add('known'); 
         } else {
-            card.classList.remove('known'); // Remove the known class
-            card.classList.add('not-known'); // Add a class to indicate the card is not known
-            // Update backend/database here if needed
+            card.classList.remove('known'); 
+            card.classList.add('not-known'); 
         }
     };
 });
