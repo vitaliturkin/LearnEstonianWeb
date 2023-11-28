@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard System - Advanced Level</title>
+    <link rel="stylesheet" href="/static/test.css"> 
+</head>
+
+<body>
+    <header>
+        <h1>Flashcard System</h1><!-- Levels -->
+        <nav>
+            <ul>
+                <li><a href="/beginner">Beginner</a></li>
+                <li><a href="/intermediate">Intermediate</a></li>
+                <li><a href="/advanced">Advanced</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flashcard"><!-- Test -->
+            <div class="question" id="question"></div>
+            <input type="text" id="userAnswer" placeholder="Your Answer">
+            <div class="result" id="result"></div>
+            <button onclick="checkAnswer()">Check Answer</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Flashcard System. All rights reserved.</p>
+    </footer>
+      <script src="/static/advancedtest.js"></script>
+</body>
+
+</html>

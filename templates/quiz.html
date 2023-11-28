@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estonian Quiz</title>
+    <link rel="stylesheet" href="/static/quiz.css">
+</head>
+<body>
+        <form id="quiz-form" action="/quiz/" method="POST"><!-- Quiz -->
+            {% for q_num, question in qa.items() %}
+                <div class="question">
+                    <p>{{ question.text }}</p>
+                    {% for ans_num, answer in question.enumerated_answers %}
+                        <div class="answer">
+                            <input type="radio" id="question_{{ q_num }}_answer_{{ ans_num }}" name="question_{{ q_num }}" value="{{ ans_num }}" onchange="showFeedback('{{ q_num }}', {{question.correct_answer_index }})">
+                            <label for="question_{{ q_num }}_answer_{{ ans_num }}">{{ answer }}</label>
+                        </div>
+                    {% endfor %}
+                    <div id="feedback_{{ q_num }}"></div>
+                </div>
+            {% endfor %}
+            <form id="quiz-form" action="/quiz/" method="POST" onsubmit="displayScoreMessage({{ score }})">
+                <button type="submit">Submit</button>
+            </form>
+        </form>
+        
+    <script src="/static/quiz.js"></script>
+</body>
+</html>
+

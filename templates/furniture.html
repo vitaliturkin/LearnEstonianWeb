@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard System - Furniture</title>
+    <link rel="stylesheet" href="/static/flashcards.css"> 
+</head>
+
+<body>
+    <header>
+        <h1>Flashcard System</h1><!-- Levels -->
+        <nav>
+            <ul>
+                <li><a href="/beginner">Beginner</a></li>
+                <li><a href="/intermediate">Intermediate</a></li>
+                <li><a href="/advanced">Advanced</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flashcard-container"><!-- Flaschcards -->
+            {% for flashcard in flashcard_images %}
+            <div class="flashcard">
+                <div class="card-number">{{ loop.index }}</div>
+                <div class="card-content">
+                    <img src="{{ flashcard.image_path }}" alt="{{ flashcard.word }}">
+                    <div class="word">{{ flashcard.word }}</div>
+                </div>
+                <div class="label-buttons"><!-- Interactions -->
+                    <button class="know-btn">Know</button>
+                    <button class="dont-know-btn">Don't Know</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Flashcard System. All rights reserved.</p>
+    </footer>
+    <script src="/static/flashcards.js"></script>   
+</body>
+
+</html>
